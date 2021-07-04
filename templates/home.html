@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="outer">
+    <form action="add">
+        {% csrf_token %}
+        <h3 class="heading">Choose what would you like to do:</h3>
+        <div class="row1">
+            <div class="col1">
+                <input type="radio" name="choice" id="string" value="string" defaultChecked/>
+                <label htmlFor="file">Using String</label><br />
+            </div>
+            <div class="col2">
+                <input type="radio" name="choice" id="file" value="file"/>
+                <label htmlFor="file">Using File</label><br />
+            </div>
+        </div>
+        <div class="row2">
+            <div class="col1">
+                <textarea name="text1" id="text1" cols="20" rows="3" placeholder="String or File URL here"></textarea><br />
+                <input type="text" name="text2" id="text2" class="text2" onChange="" placeholder="Secret Key"/> <br />
+                <input type="submit" name="action" value="Encrypt" id="btn1" onClick="console.log('clicked encrypt')"/><br />
+            </div>
+            <div class="col2">
+                <textarea name="text3" id="text3" cols="20" rows="3" placeholder="The Encrypted value is" ></textarea><br />
+                <input type="text" name="text4" id="text4" class="text4" onChange="" placeholder="Secret Key"/> <br />
+                <input type="submit" name="action" value="Decrypt" id="btn2" onClick="console.log('clicked decrypt')" /><br />
+            </div>
+        </div>
+        <h3 class="heading white">Made with ❤️ by Koushiki + Manish .</h3>
+    </form>
+</div>
+
+{% endblock %}
